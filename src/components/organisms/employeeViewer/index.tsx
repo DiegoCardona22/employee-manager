@@ -14,13 +14,14 @@ import {
 } from '@mui/material';
 
 // @scripts
-import employees from '../../../config/master-data/employee.json';
-import PopupAtm from '../../atoms/popup-atm';
-import TypographyAtm from '../../atoms/typography-atm';
-import AddOrEditEmployee from './addOrEditEmployee';
-import SeeEmployeeDetails from './seeEmployeeDetails';
 import ActionButtonAtm from '../../atoms/action-button-atm';
+import AddOrEditEmployee from './addOrEditEmployee';
+import PopupAtm from '../../atoms/popup-atm';
+import SeeEmployeeDetails from './seeEmployeeDetails';
+import TypographyAtm from '../../atoms/typography-atm';
 import employeeDetail from '../../../config/master-data/employeeDetail.json';
+import employees from '../../../config/master-data/employee.json';
+import useBreakpoint from '../../../hooks/useBreakpoint';
 import { defaultValues, schema } from './schema';
 
 // @types
@@ -34,6 +35,7 @@ interface EmployeeViewerProps {
 }
 
 const EmployeeViewer: React.FC = ({ dataTestId = 'employee-viewer' }: EmployeeViewerProps) => {
+  const breakpoint = useBreakpoint();
   const [employeeList, setEmployeeList] = useState<IEmployees[]>(employees);
   const [employeeSelected, setEmployeeSelected] = useState<IEmployees>({} as IEmployees);
   const [showDeleteModal, setShowDeleteModal] = useState<boolean>(false);
@@ -196,8 +198,8 @@ const EmployeeViewer: React.FC = ({ dataTestId = 'employee-viewer' }: EmployeeVi
       </TableContainer>
       {addOrEditEmployee.open && (
         <PopupAtm
-          width="1200px"
-          height="800px"
+          width={(breakpoint === 'xs' || breakpoint === 'sm') ? 'auto' : '1200px'}
+          height={(breakpoint === 'xs' || breakpoint === 'sm') ? 'auto' : '800px'}
           open={addOrEditEmployee.open}
           title={addOrEditEmployee.isEditing ? 'Edit Employee' : 'Add Employee'}
           onCancel={() => setAddOrEditEmployee({ isEditing: false, open: false, type: '' })}

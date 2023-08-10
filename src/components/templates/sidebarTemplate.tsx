@@ -5,23 +5,25 @@ import { useTheme } from '@mui/material/styles';
 
 // @scripts
 import ResponsiveDrawer from '../molecules/sidebar';
-import classes from '../molecules/sidebar/index.module.scss';
+import useBreakpoint from '../../hooks/useBreakpoint';
 
 // @styles
 import { EmployeeManagementTheme } from '../../styles/theme';
+import classes from '../molecules/sidebar/index.module.scss';
 
 interface SidebarTemplateProps {
   children: ReactNode;
 }
 const SidebarTemplate = ({ children }: SidebarTemplateProps) => {
   const theme = useTheme<EmployeeManagementTheme>();
+  const breakpoint = useBreakpoint();
 
   return (
     <Box
       className={classes.sidebarTemplate}
       sx={{ background: theme.skin.backgroundMain }}
     >
-      <ResponsiveDrawer />
+      {breakpoint !== 'xs' && <ResponsiveDrawer />}
       <main>{children}</main>
     </Box>
   );
