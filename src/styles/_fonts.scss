@@ -1,0 +1,65 @@
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 400;
+  src: url("../assets/Inter-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: Inter-Light;
+  font-style: normal;
+  font-weight: 400;
+  src: url("../assets/Inter-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: Inter-Regular;
+  font-style: normal;
+  font-weight: 400;
+  src: url("../assets/Inter-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: Inter-Medium;
+  font-style: normal;
+  font-weight: 500;
+  src: url("../assets/Inter-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: Inter-SemiBold;
+  font-style: normal;
+  font-weight: 600;
+  src: url("../assets/Inter-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: Inter-Bold;
+  font-style: normal;
+  font-weight: 600;
+  src: url("../assets/Inter-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: Inter-ExtraBold;
+  font-style: normal;
+  font-weight: 800;
+  src: url("../assets/Inter-ExtraBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: Inter-Black;
+  font-style: normal;
+  font-weight: 900;
+  src: url("../assets/Inter-Black.ttf") format("truetype");
+}
+
+/*  Theme Typography - font families */
+$font-primary: "Inter", sans-serif;
+$font-medium: "Inter-Medium", sans-serif;
+$font-semi-bold: "Inter-SemiBold", sans-serif;
+$font-regular: "Inter-Regular", sans-serif;
+$font-bold: "Inter-Bold", sans-serif;
+$font-title: "Inter-ExtraBold", sans-serif;
+$font_main: $font-medium, -apple-system, sans-serif, roboto, "Segoe UI", helvetica, arial,
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";

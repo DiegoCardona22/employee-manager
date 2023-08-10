@@ -1,0 +1,13 @@
+{
+  // Workspace recommended extensions.
+  // Learn more:  http://go.microsoft.com/fwlink/?LinkId=827846
+  "recommendations": [
+    "christian-kohler.npm-intellisense",
+    "dbaeumer.vscode-eslint",
+    "mikestead.dotenv",
+    "sibiraj-s.vscode-scss-formatter",
+    "unifiedjs.vscode-mdx",
+    "stylelint.vscode-stylelint",
+    "tyriar.sort-lines",
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "actions": "Actions",
+  "add": "Add",
+  "cancel": "Cancel",
+  "dateArrival": "Date Arrival",
+  "delete": "Delete",
+  "deleteEmployeeMessage": "Are you sure you want to delete this employee?",
+  "edit": "Edit",
+  "employee": "Employee",
+  "employees": "Employees",
+  "employeesViewer": "Employees Viewer",
+  "export": "Export",
+  "firstName": "First Name",
+  "lastName": "Last Name",
+  "new": "New",
+  "position": "Position",
+  "positionTitle": "Position Title",
+  "required": "This field is required",
+  "status": "Status",
+  "update": "Update"
+}
