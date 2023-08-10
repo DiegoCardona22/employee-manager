@@ -16,14 +16,14 @@ This project supports a superset of the latest `JavaScript`/`TypeScript` standar
 - [React 18.2.0](https://reactjs.org) with `React Scripts 5.0.1`
 - [SASS 1.65.1](https://sass-lang.com) with [CSS Modules](https://github.com/css-modules/css-modules)
 - [MUI 5.14.4](https://mui.com) with `Emotion` styling engine, `Roboto Fonts` and `Material Icons`
-- [TypeScript 4.7.4](https://www.typescriptlang.org) with [ES6](http://es6-features.org)
-- [I18next 21.8.11](https://react.i18next.com) for internationalization
-- [React Router 6.3.0](https://reactrouter.com/) for the routing system
+- [TypeScript 5.1.6](https://www.typescriptlang.org) with [ES6](http://es6-features.org)
+- [I18next 23.4.4](https://react.i18next.com) for internationalization
+- [React Router 6.14.2](https://reactrouter.com/) for the routing system
 
 ## Code Quality & Performance
-- [ESLint 8.18.0](https://eslint.org) with `Airbnb`, `TypeScript`, `React`, `React Hooks` and `Jest` configuration
-- [Stylelint 14.9.1](https://stylelint.io) to analyse `CSS`/`SCSS` files
-- [React Testing Library 13.3.0](https://testing-library.com/docs/react-testing-library/intro) to test components
+- [ESLint 8.46.0](https://eslint.org) with `Airbnb`, `TypeScript`, `React`, `React Hooks` and `Jest` configuration
+- [Stylelint 15.10.2](https://stylelint.io) to analyse `CSS`/`SCSS` files
+- [React Testing Library 14.0.0](https://testing-library.com/docs/react-testing-library/intro) to test components
 - [Web Vitals 2.1.4](https://web.dev/vitals) to meassure performance
 
 ## Built-in Settings
@@ -71,14 +71,14 @@ This project supports a superset of the latest `JavaScript`/`TypeScript` standar
    - You can set breakpoints and inspect components in the [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
 
 ## Available Scripts
-| Command               | Description                                      | Evironment File  |
+| Command               | Description                                      | Environment File  |
 | :---                  | :---                                             | :---             |
 | `npm run init`        | Installs project dependencies for the first time | N/A              |
 | `npm run lint`        | Analyses **JavaSript**/**TypeScript** code       | N/A              |
 | `npm run lint:f`      | Try to fix **JavaSript**/**TypeScript** errors   | N/A              |
 | `npm run slint`       | Analyses **CSS**/**SCSS** styles                 | N/A              |
 | `npm run slint:f`     | Try to fix **CSS**/**SCSS** errors               | N/A              |
-| `npm run test`        | Executes Unit Tests outputting to `out/coverage` | .env.test        |
+| `npm run test`        | Executes Unit Tests outputting to `out/coverage` | .env.local        |
 | `npm run dev`         | Runs the App in http://localhost:3000            | .env.local       |
 | `npm run build`       | Builds the App to `out/build/production`         | .env.production  |
 | `npm run preview`     | Previews the App to `out/build/production`       | .env.production  |

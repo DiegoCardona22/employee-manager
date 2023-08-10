@@ -46,9 +46,9 @@ export default ({ mode }) => {
           additionalData: `
           @import "./src/styles/colors.scss";
           @import "./src/styles/variables.scss";
-        `
-        }
-      }
+        `,
+        },
+      },
     },
     test: {
       environment: 'jsdom',
@@ -58,19 +58,19 @@ export default ({ mode }) => {
       watch: false,
       allowOnly: true,
       coverage: {
-        provider: "istanbul",
+        provider: 'istanbul',
         all: true,
-        include: ["src/**/*.ts, src/**/*.tsx"],
-        reportsDirectory: "out/coverage",
+        include: ['src/**/*.ts, src/**/*.tsx'],
+        reportsDirectory: 'out/coverage',
         exclude: [
-          "src/routes/**",
-          "src/types/**",
-          "src/App.tsx",
-          "src/main.tsx",
-          "src/core",
-          "src/redux",
+          'src/routes/**',
+          'src/types/**',
+          'src/App.tsx',
+          'src/main.tsx',
+          'src/core',
+          'src/redux',
         ],
-      }
+      },
     },
     build: {
       minify: false,
