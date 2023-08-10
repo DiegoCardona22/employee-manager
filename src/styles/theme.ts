@@ -273,68 +273,11 @@ const createEmployeeManagementTheme = (colors: typeof palette, skin: typeof ligh
         },
       },
     },
-    MuiInputLabel: {
-      styleOverrides: {
-        root: {
-          '&.MuiInputLabel-shrink': {
-            fontSize: '21px',
-            marginTop: '-2px !important',
-          },
-        },
-      },
-    },
     MuiButton: {
       styleOverrides: {
         root: {
           padding: '12px 18px',
           width: '150px',
-        },
-      },
-    },
-    MuiCheckbox: {
-      styleOverrides: {
-        root: {
-          color: skin.textSecondary,
-          '&.Mui-checked': {
-            color: `${skin.primaryMain}`,
-          },
-          '&.Mui-focusVisible': {
-            '&::before': {
-              border: `2px solid ${skin.primaryMain}`,
-              borderRadius: 4,
-              height: 20,
-              position: 'absolute',
-              width: 20,
-            },
-          },
-        },
-      },
-    },
-    MuiAutocomplete: {
-      styleOverrides: {
-        paper: {
-          backgroundColor: skin.listBackground,
-          '.MuiAutocomplete-listbox': {
-            '.MuiAutocomplete-option': {
-              '&:hover': {
-                color: skin.textPrimary,
-                backgroundColor: skin.listHover,
-              },
-              '&[aria-selected="true"]': {
-                color: colors.white,
-                backgroundColor: skin.primaryMain,
-              },
-              '&[aria-selected="true"].Mui-focused': {
-                backgroundColor: skin.primaryMain,
-              },
-            },
-          },
-        },
-        root: {
-          '&MuiAutocomplete-groupLabel': {
-            color: skin.textPrimary,
-            backgroundColor: skin.primaryMain,
-          },
         },
       },
     },
@@ -349,13 +292,6 @@ const createEmployeeManagementTheme = (colors: typeof palette, skin: typeof ligh
             borderRadius: '4px',
             opacity: 0.7,
           },
-        },
-      },
-    },
-    MuiToolbar: {
-      styleOverrides: {
-        root: {
-          backgroundColor: skin.backgroundMain,
         },
       },
     },
@@ -380,22 +316,6 @@ const createEmployeeManagementTheme = (colors: typeof palette, skin: typeof ligh
       styleOverrides: {
         root: {
           boxShadow: 'none',
-        },
-      },
-    },
-    MuiBadge: {
-      styleOverrides: {
-        badge: {
-          margin: '-4px',
-        },
-      },
-    },
-    MuiAccordion: {
-      styleOverrides: {
-        root: {
-          boxShadow: 'none',
-          border: `1px solid ${colors.azureishWhite}`,
-          borderRadius: '4px',
         },
       },
     },
