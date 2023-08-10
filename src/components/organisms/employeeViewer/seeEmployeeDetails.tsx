@@ -42,7 +42,9 @@ const SeeEmployeeDetails = ({ employee }: ISeeEmployeeDetailsProps) => {
             <Divider sx={{ mb: 2 }} />
             <div className={styles.detailItem}>
               <TypographyAtm className={styles.detailTitle} variant="h3">
-                <strong>Name:</strong>
+                <strong>
+                  {t('text:name')}
+                </strong>
               </TypographyAtm>
               <TypographyAtm className={styles.detailValue} variant="h3">
                 {`${employeeDetails.firstName} ${employeeDetails.middleName} ${employeeDetails.lastName}`}
@@ -50,7 +52,9 @@ const SeeEmployeeDetails = ({ employee }: ISeeEmployeeDetailsProps) => {
             </div>
             <div className={styles.detailItem}>
               <TypographyAtm className={styles.detailTitle} variant="h3">
-                <strong>Location:</strong>
+                <strong>
+                  {t('text:location')}
+                </strong>
               </TypographyAtm>
               <TypographyAtm className={styles.detailValue} variant="h3">
                 {employeeDetails.locationCity}
@@ -58,7 +62,9 @@ const SeeEmployeeDetails = ({ employee }: ISeeEmployeeDetailsProps) => {
             </div>
             <div className={styles.detailItem}>
               <TypographyAtm className={styles.detailTitle} variant="h3">
-                <strong>Address:</strong>
+                <strong>
+                  {t('text:address')}
+                </strong>
               </TypographyAtm>
               <TypographyAtm className={styles.detailValue} variant="h3">
                 {employeeDetails.address}
@@ -66,7 +72,9 @@ const SeeEmployeeDetails = ({ employee }: ISeeEmployeeDetailsProps) => {
             </div>
             <div className={styles.detailItem}>
               <TypographyAtm className={styles.detailTitle} variant="h3">
-                <strong>Date of Birth:</strong>
+                <strong>
+                  {t('text:dateOfBirth')}
+                </strong>
               </TypographyAtm>
               <TypographyAtm className={styles.detailValue} variant="h3">
                 {employeeDetails.dateBirth}
@@ -74,7 +82,9 @@ const SeeEmployeeDetails = ({ employee }: ISeeEmployeeDetailsProps) => {
             </div>
             <div className={styles.detailItem}>
               <TypographyAtm className={styles.detailTitle} variant="h3">
-                <strong>Telephone:</strong>
+                <strong>
+                  {t('text:telephone')}
+                </strong>
               </TypographyAtm>
               <TypographyAtm className={styles.detailValue} variant="h3">
                 {employeeDetails.telephone}
@@ -90,7 +100,9 @@ const SeeEmployeeDetails = ({ employee }: ISeeEmployeeDetailsProps) => {
             <Divider sx={{ mb: 2 }} />
             <div className={styles.detailItem}>
               <TypographyAtm className={styles.detailTitle} variant="h3">
-                <strong>Title:</strong>
+                <strong>
+                  {t('text:title')}
+                </strong>
               </TypographyAtm>
               <TypographyAtm className={styles.detailValue} variant="h3">
                 {employeeDetails.positionTitle}
@@ -98,7 +110,9 @@ const SeeEmployeeDetails = ({ employee }: ISeeEmployeeDetailsProps) => {
             </div>
             <div className={styles.detailItem}>
               <TypographyAtm className={styles.detailTitle} variant="h3">
-                <strong>Hire Date:</strong>
+                <strong>
+                  {t('text:hireDate')}
+                </strong>
               </TypographyAtm>
               <TypographyAtm className={styles.detailValue} variant="h3">
                 {employeeDetails.hireDate}
@@ -106,7 +120,9 @@ const SeeEmployeeDetails = ({ employee }: ISeeEmployeeDetailsProps) => {
             </div>
             <div className={styles.detailItem}>
               <TypographyAtm className={styles.detailTitle} variant="h3">
-                <strong>Email:</strong>
+                <strong>
+                  {t('text:email')}
+                </strong>
               </TypographyAtm>
               <TypographyAtm className={styles.detailValue} variant="h3">
                 {employeeDetails.email}
@@ -114,7 +130,9 @@ const SeeEmployeeDetails = ({ employee }: ISeeEmployeeDetailsProps) => {
             </div>
             <div className={styles.detailItem}>
               <TypographyAtm className={styles.detailTitle} variant="h3">
-                <strong>Salary:</strong>
+                <strong>
+                  {t('text:salary')}
+                </strong>
               </TypographyAtm>
               <TypographyAtm className={styles.detailValue} variant="h3">
                 $
@@ -123,7 +141,9 @@ const SeeEmployeeDetails = ({ employee }: ISeeEmployeeDetailsProps) => {
             </div>
             <div className={styles.detailItem}>
               <TypographyAtm className={styles.detailTitle} variant="h3">
-                <strong>Time in Position:</strong>
+                <strong>
+                  {t('text:timeInPosition')}
+                </strong>
               </TypographyAtm>
               <TypographyAtm className={styles.detailValue} variant="h3">
                 {employeeDetails.timeInPosition}
