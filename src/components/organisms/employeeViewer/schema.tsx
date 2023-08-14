@@ -13,10 +13,31 @@ export const schema = Yup.object().shape({
       addressRegExp,
       'Address must contain at least two letter, two numbers',
     ),
-  dateBirth: Yup.string().required('Date of Birth is required').nullable(),
+  dateBirth: Yup.string().required('Date of Birth is required').nullable()
+    .test('dateBirth', 'Date of birth must be less than today', (value) => {
+      const today = new Date();
+      const dateBirthDate = new Date(value as unknown as string);
+
+      return dateBirthDate < today;
+    }),
   email: Yup.string().email(t('text:invalidEmail') as string).required(t('text:required') as string),
   firstName: Yup.string().required(t('text:required') as string),
-  hireDate: Yup.string().required('Date of Birth is required').nullable(),
+  hireDate: Yup.string()
+    .required('Date of Birth is required')
+    .test('hireDate', 'Hire date must be greater than date of birth', function (value) {
+      const { dateBirth } = this.parent;
+      const dateBirthDate = new Date(dateBirth as unknown as string);
+      const hireDateDate = new Date(value as unknown as string);
+
+      return hireDateDate > dateBirthDate;
+    })
+    .test('hireDate', 'Hire date must be less than today', (value) => {
+      const today = new Date();
+      const hireDateDate = new Date(value as unknown as string);
+
+      return hireDateDate < today;
+    })
+    .nullable(),
   lastName: Yup.string().required(t('text:required') as string),
   locationCity: Yup.string().required(t('text:required') as string),
   middleName: Yup.string().required(t('text:required') as string),
