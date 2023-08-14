@@ -34,8 +34,8 @@ const SeeEmployeeDetails = ({ employee }: ISeeEmployeeDetailsProps) => {
   return (
     <Container>
       <Avatar className={styles.avatar} color="primary">
-        {employee.firstName && employee.firstName[0]}
-        {employee.lastName && employee.lastName[0]}
+        {employeeDetails.firstName && employeeDetails.firstName[0]}
+        {employeeDetails.lastName && employeeDetails.lastName[0]}
       </Avatar>
       <Grid container spacing={2} className={styles.detailsContainer}>
         <Grid item xs={12} sm={6}>

@@ -100,7 +100,7 @@ const AddOrEditEmployee = ({
                 label="Telephone"
                 required
                 fullWidth
-                type="tel"
+                type="number"
                 error={!!errors?.telephone}
                 helperText={errors?.telephone?.message}
                 {...register('telephone')}
