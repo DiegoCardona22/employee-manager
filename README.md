@@ -1,4 +1,4 @@
-# React, MUI and TypeScript Template
+# Employee Manager App - React MUI TS Template
 This template is intended to help you start a new `React SPA` project from scratch with a comprehensive file structure, required dependencies, built-in configurations, example components and good practices for React Web Development.
 
 The project was bootstrapped with [Create Vite](https://vitejs.dev/guide) following this [Tutorial](https://dev.to/equimancho/vite-configuracion-para-react-3hf2). Below you will find some information about main features and how to perform common tasks.
