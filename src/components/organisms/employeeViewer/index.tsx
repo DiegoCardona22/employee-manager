@@ -116,8 +116,6 @@ const EmployeeViewer: React.FC = ({ dataTestId = 'employee-viewer' }: EmployeeVi
     setAddOrEditEmployee({ isEditing: false, open: false, type: '' });
   };
 
-  console.log(employeeSelected);
-
   return (
     <Box className={styles.root}>
       <TypographyAtm variant="h2" muiProps={{ color: 'primary', display: 'flex', justifyContent: 'center' }}>
@@ -221,7 +219,8 @@ const EmployeeViewer: React.FC = ({ dataTestId = 'employee-viewer' }: EmployeeVi
       )}
       {showDeleteModal && (
         <PopupAtm
-          width="600px"
+          width={(breakpoint === 'xs' || breakpoint === 'sm') ? 'auto' : '500px'}
+          height={(breakpoint === 'xs' || breakpoint === 'sm') ? 'auto' : '200px'}
           open={showDeleteModal}
           title={`Delete ${employeeSelected.firstName} ${employeeSelected.lastName}`}
           onCancel={() => setShowDeleteModal(false)}
@@ -238,8 +237,8 @@ const EmployeeViewer: React.FC = ({ dataTestId = 'employee-viewer' }: EmployeeVi
       )}
       {showDetailModal && (
         <PopupAtm
-          width="1200px"
-          height="470px"
+          width={(breakpoint === 'xs' || breakpoint === 'sm') ? 'auto' : '1200px'}
+          height={(breakpoint === 'xs' || breakpoint === 'sm') ? 'auto' : '450px'}
           open={showDetailModal}
           title={`${employeeSelected.firstName} ${employeeSelected.lastName}`}
           onCancel={() => setShowDetailModal(false)}

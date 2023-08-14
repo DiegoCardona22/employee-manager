@@ -139,8 +139,7 @@ const SeeEmployeeDetails = ({ employee }: ISeeEmployeeDetailsProps) => {
                 </strong>
               </TypographyAtm>
               <TypographyAtm className={styles.detailValue} variant="h3">
-                $
-                {employeeDetails.salary}
+                {`${employeeDetails.salary}`}
               </TypographyAtm>
             </div>
             <div className={styles.detailItem}>
