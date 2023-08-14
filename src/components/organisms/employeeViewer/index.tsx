@@ -167,22 +167,22 @@ const EmployeeViewer: React.FC = ({ dataTestId = 'employee-viewer' }: EmployeeVi
         <Table id="table-to-xls" aria-label="simple table">
           <TableHead>
             <TableRow sx={{ backgroundColor: '#f5f5f5' }}>
-              <TableCell sx={{ width: '10%', fontWeight: 'bold' }}>
+              <TableCell sx={{ width: '10%', fontWeight: 'bold', fontSize: '1rem' }}>
                 {t('text:actions')}
               </TableCell>
-              <TableCell sx={{ width: '20%', fontWeight: 'bold' }}>
+              <TableCell sx={{ width: '20%', fontWeight: 'bold', fontSize: '1rem' }}>
                 {t('text:firstName')}
               </TableCell>
-              <TableCell sx={{ width: '20%', fontWeight: 'bold' }}>
+              <TableCell sx={{ width: '20%', fontWeight: 'bold', fontSize: '1rem' }}>
                 {t('text:lastName')}
               </TableCell>
-              <TableCell sx={{ width: '20%', fontWeight: 'bold' }}>
+              <TableCell sx={{ width: '20%', fontWeight: 'bold', fontSize: '1rem' }}>
                 {t('text:positionTitle')}
               </TableCell>
-              <TableCell sx={{ width: '20%', fontWeight: 'bold' }}>
+              <TableCell sx={{ width: '20%', fontWeight: 'bold', fontSize: '1rem' }}>
                 {t('text:dateArrival')}
               </TableCell>
-              <TableCell sx={{ width: '10%', fontWeight: 'bold' }}>
+              <TableCell sx={{ width: '10%', fontWeight: 'bold', fontSize: '1rem' }}>
                 {t('text:status')}
               </TableCell>
             </TableRow>
@@ -207,11 +207,11 @@ const EmployeeViewer: React.FC = ({ dataTestId = 'employee-viewer' }: EmployeeVi
                     </IconButton>
                   </Tooltip>
                 </TableCell>
-                <TableCell>{employee.firstName}</TableCell>
-                <TableCell>{employee.lastName}</TableCell>
-                <TableCell>{employee.positionTitle}</TableCell>
-                <TableCell>{employee.dateArrival}</TableCell>
-                <TableCell>{employee.status}</TableCell>
+                <TableCell className={styles.tableCell}>{employee.firstName}</TableCell>
+                <TableCell className={styles.tableCell}>{employee.lastName}</TableCell>
+                <TableCell className={styles.tableCell}>{employee.positionTitle}</TableCell>
+                <TableCell className={styles.tableCell}>{employee.dateArrival}</TableCell>
+                <TableCell className={styles.tableCell}>{employee.status}</TableCell>
               </TableRow>
             ))}
           </TableBody>
