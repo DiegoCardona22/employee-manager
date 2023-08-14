@@ -4,7 +4,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useState } from 'react';
 import { t } from 'i18next';
-import { useForm } from 'react-hook-form';
+import { UseFormReturn, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import AddIcon from '@mui/icons-material/Add';
 import Grid from '@mui/material/Grid';
@@ -46,7 +46,7 @@ const EmployeeViewer: React.FC = ({ dataTestId = 'employee-viewer' }: EmployeeVi
   });
 
   const breakpoint = useBreakpoint();
-  const modalBreakpoint = breakpoint === 'xs' || breakpoint === 'sm' || breakpoint === 'md';
+  const modalBreakpoint = breakpoint === 'xs' || breakpoint === 'sm' || breakpoint === 'md' || breakpoint === 'lg';
 
   const {
     formState: { errors },
@@ -213,9 +213,9 @@ const EmployeeViewer: React.FC = ({ dataTestId = 'employee-viewer' }: EmployeeVi
           type={addOrEditEmployee.isEditing ? 'update' : 'add'}
         >
           <AddOrEditEmployee
-            errors={errors as any}
-            register={register as any}
-            watch={watch as any}
+            errors={errors as unknown as { [key: string]: { message: string } }}
+            register={register as unknown as UseFormReturn['register']}
+            watch={watch as unknown as UseFormReturn['watch']}
           />
         </PopupAtm>
       )}

@@ -21,10 +21,6 @@
   align-items: center;
 }
 
-.addButton {
-  margin-bottom: 16px;
-}
-
 .tableContainer {
   margin-top: 16px;
   height: calc(100vh - 120px);
@@ -44,7 +40,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
 }
 
 .section {
@@ -52,10 +47,6 @@
   border: 1px solid #e0e0e0;
   border-radius: 4px;
   height: 100%;
-}
-
-.sectionTitle {
-  margin-bottom: 25px;
 }
 
 .MuiTextField-root {
@@ -75,17 +66,9 @@
   margin: 8px 0;
 }
 
-.employeeDetail {
-  margin-bottom: 8px;
-}
-
-.positionDetail {
-  margin-bottom: 8px;
-}
-
 .detailItem {
-  display: flex;
   align-items: center;
+  display: flex;
   margin-bottom: 10px;
 }
 
