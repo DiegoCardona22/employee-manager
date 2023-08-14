@@ -32,11 +32,12 @@ const AddOrEditEmployee = ({
           <Grid container spacing={4}>
             <Grid item xs={12} sm={12}>
               <TextField
+                error={!!errors?.firstName}
+                fullWidth
+                helperText={errors?.firstName?.message}
+                inputProps={{ maxLength: 20 }}
                 label="First Name"
                 required
-                fullWidth
-                error={!!errors?.firstName}
-                helperText={errors?.firstName?.message}
                 {...register('firstName')}
               />
             </Grid>
@@ -47,16 +48,18 @@ const AddOrEditEmployee = ({
                 fullWidth
                 error={!!errors?.middleName}
                 helperText={errors?.middleName?.message}
+                inputProps={{ maxLength: 20 }}
                 {...register('middleName')}
               />
             </Grid>
             <Grid item xs={12} sm={12}>
               <TextField
+                error={!!errors?.lastName}
+                fullWidth
+                helperText={errors?.lastName?.message}
+                inputProps={{ maxLength: 20 }}
                 label="Last Name"
                 required
-                fullWidth
-                error={!!errors?.lastName}
-                helperText={errors?.lastName?.message}
                 {...register('lastName')}
               />
             </Grid>
@@ -87,6 +90,9 @@ const AddOrEditEmployee = ({
                 required
                 type="date"
                 fullWidth
+                inputProps={{
+                  max: new Date().toISOString().split('T')[0],
+                }}
                 InputLabelProps={{
                   shrink: true,
                 }}
@@ -131,6 +137,9 @@ const AddOrEditEmployee = ({
                 label="Hire Date"
                 required
                 type="date"
+                inputProps={{
+                  max: new Date().toISOString().split('T')[0],
+                }}
                 InputLabelProps={{
                   shrink: true,
                 }}
