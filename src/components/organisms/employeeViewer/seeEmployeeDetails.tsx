@@ -27,6 +27,10 @@ const SeeEmployeeDetails = ({ employee }: ISeeEmployeeDetailsProps) => {
     setEmployeeDetails(employeeDetailsData ?? {} as IEmployeesDetails);
   }, [employee]);
 
+  if (!employeeDetails.id) {
+    setEmployeeDetails(employee as unknown as IEmployeesDetails);
+  }
+
   return (
     <Container>
       <Avatar className={styles.avatar} color="primary">

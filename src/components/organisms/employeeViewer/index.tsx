@@ -116,6 +116,8 @@ const EmployeeViewer: React.FC = ({ dataTestId = 'employee-viewer' }: EmployeeVi
     setAddOrEditEmployee({ isEditing: false, open: false, type: '' });
   };
 
+  console.log(employeeSelected);
+
   return (
     <Box className={styles.root}>
       <TypographyAtm variant="h2" muiProps={{ color: 'primary', display: 'flex', justifyContent: 'center' }}>
