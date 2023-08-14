@@ -234,6 +234,12 @@ const createEmployeeManagementTheme = (colors: typeof palette, skin: typeof ligh
       fontWeight: '300',
       lineHeight: '29.05px',
     },
+    h1: {
+      fontFamily: 'Inter-Light',
+      fontSize: '32px',
+      fontWeight: '300',
+      lineHeight: '38.71px',
+    },
     body2: {
       fontFamily: 'Inter-Light',
       fontSize: '12px',

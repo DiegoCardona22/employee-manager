@@ -121,7 +121,15 @@ const EmployeeViewer: React.FC = ({ dataTestId = 'employee-viewer' }: EmployeeVi
 
   return (
     <Box className={styles.root}>
-      <TypographyAtm variant="h2" muiProps={{ color: 'primary', display: 'flex', justifyContent: 'center' }}>
+      <TypographyAtm
+        variant="h1"
+        fontWeight={600}
+        muiProps={{
+          color: 'primary',
+          display: 'flex',
+          justifyContent: 'center',
+        }}
+      >
         {t('text:employeesViewer')}
       </TypographyAtm>
       <Grid
