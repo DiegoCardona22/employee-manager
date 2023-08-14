@@ -1,16 +1,17 @@
 // @packages
-import SearchIcon from '@mui/icons-material/Search';
-import EditIcon from '@mui/icons-material/Edit';
-import DeleteIcon from '@mui/icons-material/Delete';
-import { useState } from 'react';
-import { t } from 'i18next';
-import { UseFormReturn, useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
 import AddIcon from '@mui/icons-material/Add';
+import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
 import Grid from '@mui/material/Grid';
+import ReactHTMLTableToExcel from 'react-html-table-to-excel';
+import SearchIcon from '@mui/icons-material/Search';
+import { UseFormReturn, useForm } from 'react-hook-form';
+import { t } from 'i18next';
+import { useState } from 'react';
 import { v4 as uuidV4 } from 'uuid';
+import { yupResolver } from '@hookform/resolvers/yup';
 import {
-  Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, IconButton, Box, Tooltip,
+  Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, IconButton, Box, Tooltip, Button,
 } from '@mui/material';
 
 // @scripts
@@ -143,9 +144,19 @@ const EmployeeViewer: React.FC = ({ dataTestId = 'employee-viewer' }: EmployeeVi
             onClick={handleNewEmployee}
           />
         </Grid>
+        <Grid item>
+          <ReactHTMLTableToExcel
+            id="test-table-xls-button"
+            className={styles.downloadButton}
+            table="table-to-xls"
+            filename="tablexls"
+            sheet="tablexls"
+            buttonText="Download as XLS"
+          />
+        </Grid>
       </Grid>
       <TableContainer component={Paper} className={styles.tableContainer}>
-        <Table>
+        <Table id="table-to-xls" aria-label="simple table">
           <TableHead>
             <TableRow sx={{ backgroundColor: '#f5f5f5' }}>
               <TableCell sx={{ width: '10%', fontWeight: 'bold' }}>

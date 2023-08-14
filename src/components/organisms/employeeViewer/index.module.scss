@@ -81,3 +81,22 @@
 .detailValue {
   flex: 2;
 }
+
+.downloadButton {
+  padding: 12px 18px;
+  width: 150px;
+  font-size: 0.8125rem;
+  font-family: Inter-Regular, sans-serif;
+  background-color: var(--color-green);
+  border-radius: 4px;
+  color: var(--color-white);
+  border: 0px;
+  line-height: 17.1px;
+  box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
+
+  &:hover {
+    background-color: rgb(25, 112, 50);
+    box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
+    cursor: pointer;
+  }
+}
