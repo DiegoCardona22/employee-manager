@@ -35,7 +35,6 @@ interface EmployeeViewerProps {
 }
 
 const EmployeeViewer: React.FC = ({ dataTestId = 'employee-viewer' }: EmployeeViewerProps) => {
-  const breakpoint = useBreakpoint();
   const [employeeList, setEmployeeList] = useState<IEmployees[]>(employees);
   const [employeeSelected, setEmployeeSelected] = useState<IEmployees>({} as IEmployees);
   const [showDeleteModal, setShowDeleteModal] = useState<boolean>(false);
@@ -45,6 +44,9 @@ const EmployeeViewer: React.FC = ({ dataTestId = 'employee-viewer' }: EmployeeVi
     open: false,
     type: '',
   });
+
+  const breakpoint = useBreakpoint();
+  const modalBreakpoint = breakpoint === 'xs' || breakpoint === 'sm' || breakpoint === 'md';
 
   const {
     formState: { errors },
@@ -198,8 +200,8 @@ const EmployeeViewer: React.FC = ({ dataTestId = 'employee-viewer' }: EmployeeVi
       </TableContainer>
       {addOrEditEmployee.open && (
         <PopupAtm
-          width={(breakpoint === 'xs' || breakpoint === 'sm') ? 'auto' : '1200px'}
-          height={(breakpoint === 'xs' || breakpoint === 'sm') ? 'auto' : '800px'}
+          width={modalBreakpoint ? 'auto' : '1200px'}
+          height={modalBreakpoint ? 'auto' : '800px'}
           open={addOrEditEmployee.open}
           title={addOrEditEmployee.isEditing ? 'Edit Employee' : 'Add Employee'}
           onCancel={() => setAddOrEditEmployee({ isEditing: false, open: false, type: '' })}
@@ -219,8 +221,8 @@ const EmployeeViewer: React.FC = ({ dataTestId = 'employee-viewer' }: EmployeeVi
       )}
       {showDeleteModal && (
         <PopupAtm
-          width={(breakpoint === 'xs' || breakpoint === 'sm') ? 'auto' : '500px'}
-          height={(breakpoint === 'xs' || breakpoint === 'sm') ? 'auto' : '200px'}
+          width={modalBreakpoint ? 'auto' : '500px'}
+          height={modalBreakpoint ? 'auto' : '200px'}
           open={showDeleteModal}
           title={`Delete ${employeeSelected.firstName} ${employeeSelected.lastName}`}
           onCancel={() => setShowDeleteModal(false)}
@@ -237,8 +239,8 @@ const EmployeeViewer: React.FC = ({ dataTestId = 'employee-viewer' }: EmployeeVi
       )}
       {showDetailModal && (
         <PopupAtm
-          width={(breakpoint === 'xs' || breakpoint === 'sm') ? 'auto' : '1200px'}
-          height={(breakpoint === 'xs' || breakpoint === 'sm') ? 'auto' : '450px'}
+          width={modalBreakpoint ? 'auto' : '1200px'}
+          height={modalBreakpoint ? 'auto' : '450px'}
           open={showDetailModal}
           title={`${employeeSelected.firstName} ${employeeSelected.lastName}`}
           onCancel={() => setShowDetailModal(false)}
