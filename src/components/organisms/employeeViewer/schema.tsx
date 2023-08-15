@@ -19,6 +19,13 @@ export const schema = Yup.object().shape({
       const dateBirthDate = new Date(value as unknown as string);
 
       return dateBirthDate < today;
+    })
+    .test('dateBirth', 'Date of birth must be greater than 18 years', (value) => {
+      const today = new Date();
+      const dateBirthDate = new Date(value as unknown as string);
+      const years = today.getFullYear() - dateBirthDate.getFullYear();
+
+      return years >= 18;
     }),
   email: Yup.string().email(t('text:invalidEmail') as string).required(t('text:required') as string),
   firstName: Yup.string().required(t('text:required') as string),
@@ -36,6 +43,14 @@ export const schema = Yup.object().shape({
       const hireDateDate = new Date(value as unknown as string);
 
       return hireDateDate < today;
+    })
+    .test('hireDate', 'Hire date must be greater than birth date by 18 years', function (value) {
+      const { dateBirth } = this.parent;
+      const dateBirthDate = new Date(dateBirth as unknown as string);
+      const hireDateDate = new Date(value as unknown as string);
+      const years = hireDateDate.getFullYear() - dateBirthDate.getFullYear();
+
+      return years >= 18;
     })
     .nullable(),
   lastName: Yup.string().required(t('text:required') as string),
