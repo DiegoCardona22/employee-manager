@@ -57,7 +57,7 @@ This project supports a superset of the latest `JavaScript`/`TypeScript` standar
 5. Clone repo:
    - `git clone https://github.com/DiegoCardona22/employee-manager`
 6. Install project dependencies:
-   - `cd react-mui-ts-template`
+   - `cd employee-manager`
    - `npm run init` (performs a [Clean Install](https://docs.npmjs.com/cli/v8/commands/npm-ci))
 7. Restart VS Code to refresh TypeScript Intellisense, otherwise you might see errors in the editor:
    - Close VS Code
