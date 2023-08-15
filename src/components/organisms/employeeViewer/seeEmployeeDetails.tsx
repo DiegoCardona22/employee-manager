@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import {
   Avatar,
-  Container,
+  Box,
   Divider,
   Grid,
   Paper,
@@ -36,7 +36,7 @@ const SeeEmployeeDetails = ({ employee }: ISeeEmployeeDetailsProps) => {
   }
 
   return (
-    <Container>
+    <Box>
       <Avatar className={styles.avatar} color="primary">
         {employeeDetails.firstName && employeeDetails.firstName[0]}
         {employeeDetails.lastName && employeeDetails.lastName[0]}
@@ -159,7 +159,7 @@ const SeeEmployeeDetails = ({ employee }: ISeeEmployeeDetailsProps) => {
           </Paper>
         </Grid>
       </Grid>
-    </Container>
+    </Box>
   );
 };
 
