@@ -33,21 +33,21 @@ export const schema = Yup.object().shape({
     .required('Date of Birth is required')
     .test('hireDate', 'Hire date must be greater than date of birth', function (value) {
       const { dateBirth } = this.parent;
-      const dateBirthDate = new Date(dateBirth as unknown as string);
-      const hireDateDate = new Date(value as unknown as string);
+      const dateBirthDate = new Date(dateBirth);
+      const hireDateDate = new Date(value);
 
       return hireDateDate > dateBirthDate;
     })
     .test('hireDate', 'Hire date must be less than today', (value) => {
       const today = new Date();
-      const hireDateDate = new Date(value as unknown as string);
+      const hireDateDate = new Date(value);
 
       return hireDateDate < today;
     })
     .test('hireDate', 'Hire date must be greater than birth date by 18 years', function (value) {
       const { dateBirth } = this.parent;
-      const dateBirthDate = new Date(dateBirth as unknown as string);
-      const hireDateDate = new Date(value as unknown as string);
+      const dateBirthDate = new Date(dateBirth);
+      const hireDateDate = new Date(value);
       const years = hireDateDate.getFullYear() - dateBirthDate.getFullYear();
 
       return years >= 18;
