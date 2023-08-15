@@ -8,7 +8,6 @@
   "scripts": {
     "build": "env-cmd --no-override -f ./.env-override/.env.local vite build",
     "dev": "env-cmd --no-override -f ./.env-override/.env.local vite --mode development",
-    "init": "npm ci --loglevel=error --no-audit --no-fund",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src/",
     "lint:f": "eslint --fix --ext .js,.jsx,.ts,.tsx src/",
     "preview": "env-cmd --no-override -f ./.env-override/.env.local vite preview",
