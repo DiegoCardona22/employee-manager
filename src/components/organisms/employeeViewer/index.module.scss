@@ -1,17 +1,13 @@
-.root {
-  padding: 16px;
-}
-
-.tableCell {
-  font-weight: 400;
-  font-size: 0.8rem !important;
+.actions {
+  display: flex;
+  gap: 8px;
 }
 
 .avatar {
   align-items: center;
-  background-color: #bdbdbd;
+  background-color: var(--color-silver-chalice);
   border-radius: 50%;
-  color: #fff;
+  color: var(--color-white);
   display: flex;
   font-size: 36px;
   height: 100px;
@@ -20,55 +16,8 @@
   width: 100px;
 }
 
-.title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.tableContainer {
-  margin-top: 16px;
-  height: calc(100vh - 140px);
-  overflow-y: scroll;
-}
-
-.actions {
-  display: flex;
-  gap: 8px;
-}
-
-.formContainer {
-  margin-top: 16px;
-}
-
-.tableHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.section {
-  padding: 16px;
-  border: 1px solid #e0e0e0;
-  border-radius: 4px;
-  height: 100%;
-}
-
-.MuiTextField-root {
-  margin-bottom: 12px;
-}
-
-.submitButton {
-  margin-top: 16px;
-  text-align: center;
-}
-
 .detailsContainer {
   margin-top: 16px;
-}
-
-.MuiDivider-root {
-  margin: 8px 0;
 }
 
 .detailItem {
@@ -105,3 +54,42 @@
     cursor: pointer;
   }
 }
+
+.formContainer {
+  margin-top: 16px;
+}
+
+.root {
+  padding: 16px;
+}
+
+.section {
+  padding: 16px;
+  border: 1px solid var(--color-silver-chalice);
+  border-radius: 4px;
+  height: 100%;
+}
+
+.tableCell {
+  font-weight: 400;
+  font-size: 0.8rem !important;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tableContainer {
+  margin-top: 16px;
+  height: calc(100vh - 140px);
+  overflow-y: scroll;
+}
+
+.tableHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
