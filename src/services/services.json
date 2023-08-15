@@ -1,0 +1,9 @@
+{
+  "employees": {
+    "addEmployee": "{VITE_API_URL}/employees-svc/employees/addEmployee",
+    "deleteEmployee": "{VITE_API_URL}/employees-svc/employees/deleteEmployee",
+    "getEmployeeDetails": "{VITE_API_URL}/employees-svc/employees/getEmployeeDetails",
+    "getEmployees": "{VITE_API_URL}/employees-svc/employees/getEmployees",
+    "updateEmployee": "{VITE_API_URL}/employees-svc/employees/updateEmployee"
+  }
+}

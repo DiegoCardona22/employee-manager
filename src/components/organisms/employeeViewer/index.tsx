@@ -7,26 +7,25 @@ import ReactHTMLTableToExcel from 'react-html-table-to-excel';
 import SearchIcon from '@mui/icons-material/Search';
 import { UseFormReturn, useForm } from 'react-hook-form';
 import { t } from 'i18next';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { v4 as uuidV4 } from 'uuid';
 import { yupResolver } from '@hookform/resolvers/yup';
 import {
-  Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, IconButton, Box, Tooltip, Button,
+  Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, IconButton, Box, Tooltip,
 } from '@mui/material';
 
 // @scripts
 import ActionButtonAtm from '../../atoms/action-button-atm';
 import AddOrEditEmployee from './addOrEditEmployee';
+import EmployeesService from '../../../services/EmployeesService';
 import PopupAtm from '../../atoms/popup-atm';
 import SeeEmployeeDetails from './seeEmployeeDetails';
 import TypographyAtm from '../../atoms/typography-atm';
-import employeeDetail from '../../../config/master-data/employeeDetail.json';
-import employees from '../../../config/master-data/employee.json';
 import useBreakpoint from '../../../hooks/useBreakpoint';
 import { defaultValues, schema } from './schema';
 
 // @types
-import { IEmployees } from '../../../types/utils';
+import { IEmployees, IEmployeesDetails } from '../../../types/utils';
 
 // @styles
 import styles from './index.module.scss';
@@ -36,7 +35,8 @@ interface EmployeeViewerProps {
 }
 
 const EmployeeViewer: React.FC = ({ dataTestId = 'employee-viewer' }: EmployeeViewerProps) => {
-  const [employeeList, setEmployeeList] = useState<IEmployees[]>(employees);
+  const [employeeList, setEmployeeList] = useState<IEmployees[]>([]);
+  const [employeeDetail, setEmployeeDetail] = useState<IEmployeesDetails[]>([]);
   const [employeeSelected, setEmployeeSelected] = useState<IEmployees>({} as IEmployees);
   const [showDeleteModal, setShowDeleteModal] = useState<boolean>(false);
   const [showDetailModal, setShowDetailModal] = useState<boolean>(false);
@@ -55,9 +55,9 @@ const EmployeeViewer: React.FC = ({ dataTestId = 'employee-viewer' }: EmployeeVi
     register,
     reset,
     watch,
-  } = useForm({
+  } = useForm<IEmployees>({
     mode: 'onSubmit',
-    resolver: yupResolver(schema),
+    resolver: yupResolver(schema) as never,
     defaultValues,
   });
 
@@ -118,6 +118,23 @@ const EmployeeViewer: React.FC = ({ dataTestId = 'employee-viewer' }: EmployeeVi
     setEmployeeList(newEmployeeList);
     setAddOrEditEmployee({ isEditing: false, open: false, type: '' });
   };
+
+  const getEmployees = async () => {
+    const employeesData = await EmployeesService.getEmployees();
+
+    setEmployeeList(employeesData);
+  };
+
+  const getEmployeeDetails = async () => {
+    const employeesDetailsData = await EmployeesService.getEmployeeDetails();
+
+    setEmployeeDetail(employeesDetailsData);
+  };
+
+  useEffect(() => {
+    getEmployees();
+    getEmployeeDetails();
+  }, []);
 
   return (
     <Box className={styles.root}>

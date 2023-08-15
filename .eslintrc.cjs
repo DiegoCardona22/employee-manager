@@ -19,7 +19,10 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint'],
   rules: {
+    'import/no-extraneous-dependencies': 0,
     '@typescript-eslint/no-explicit-any': 0,
+    'class-methods-use-this': 0,
+    'func-names': 0,
     'import/prefer-default-export': 0,
     'max-len': ['error', { code: 120 }],
     'no-await-in-loop': 1,
@@ -28,7 +31,6 @@ module.exports = {
     'no-else-return': 1,
     'no-nested-ternary': 1,
     'no-param-reassign': 0,
-    'react/require-default-props': 0,
     'no-plusplus': 1,
     'no-restricted-syntax': 1,
     'no-shadow': 1,
@@ -40,5 +42,6 @@ module.exports = {
     'react/function-component-definition': 0,
     'react/jsx-props-no-spreading': 0,
     'react/react-in-jsx-scope': 0,
+    'react/require-default-props': 0,
   },
 };

@@ -49,26 +49,26 @@ export type TGlobalUI = {
 };
 
 export interface IEmployees {
+  dateArrival: string;
   firstName: string;
+  id: string;
   lastName: string;
   positionTitle: string;
-  dateArrival: string;
   status: string;
-  id: number;
 }
 
 export interface IEmployeesDetails {
-  firstName: string;
-  middleName: string;
-  lastName: string;
-  locationCity: string;
   address: string;
   dateBirth: string;
-  telephone: string;
-  positionTitle: string;
-  hireDate: string;
   email: string;
-  salary: number;
+  firstName: string;
+  hireDate: string;
+  id: string;
+  lastName: string;
+  locationCity: string;
+  middleName: string;
+  positionTitle: string;
+  salary: number | null;
+  telephone: number | null;
   timeInPosition: string;
-  id: number;
 }

@@ -1,7 +1,11 @@
 // @packages
 import { useEffect, useState } from 'react';
 import {
-  Container, Grid, Paper, Divider, Avatar,
+  Avatar,
+  Container,
+  Divider,
+  Grid,
+  Paper,
 } from '@mui/material';
 import { t } from 'i18next';
 
