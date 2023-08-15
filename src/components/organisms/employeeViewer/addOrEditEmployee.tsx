@@ -1,7 +1,6 @@
 // @packages
 import { UseFormReturn } from 'react-hook-form';
 import {
-  Box,
   Grid,
   Paper,
   TextField,
@@ -26,12 +25,12 @@ const AddOrEditEmployee = ({
   errors = {},
 }: AddOrEditEmployeeProps) => (
   <Grid container spacing={2} className={styles.formContainer}>
-    <Grid item xs={12} sm={6}>
+    <Grid item xs={12} sm={6} marginTop={2}>
       <TypographyAtm variant="h3" muiProps={{ color: 'primary' }}>
         {t('text:employee')}
       </TypographyAtm>
       <Paper className={styles.section}>
-        <Grid container spacing={4}>
+        <Grid container spacing={3}>
           <Grid item xs={12} sm={12}>
             <TextField
               error={!!errors?.firstName}
@@ -117,7 +116,7 @@ const AddOrEditEmployee = ({
         </Grid>
       </Paper>
     </Grid>
-    <Grid item xs={12} sm={6}>
+    <Grid item xs={12} sm={6} marginTop={2}>
       <TypographyAtm variant="h3" muiProps={{ color: 'primary' }}>
         {t('text:position')}
       </TypographyAtm>

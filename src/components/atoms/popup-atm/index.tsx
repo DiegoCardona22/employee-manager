@@ -108,7 +108,7 @@ const PopupAtm = ({
           height,
           minWidth: width,
           overflow: 'auto',
-          padding: '20px 15px 0px 5px',
+          padding: '20px 15px 0px 15px',
           width,
         },
       }}
