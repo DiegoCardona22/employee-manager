@@ -1,5 +1,5 @@
 # Employee Manager App - React MUI TS Template
-This template is intended to help you start a new `React SPA` project from scratch with a comprehensive file structure, required dependencies, built-in configurations, example components and good practices for React Web Development.
+This project is intended to be used as a template for creating new React applications with Material UI, TypeScript, SASS and more. It also includes a simple Employee Manager App to show how to use the template.
 
 The project was bootstrapped with [Create Vite](https://vitejs.dev/guide) following this [Tutorial](https://dev.to/equimancho/vite-configuracion-para-react-3hf2). Below you will find some information about main features and how to perform common tasks.
 
@@ -63,9 +63,19 @@ This project supports a superset of the latest `JavaScript`/`TypeScript` standar
    - Close VS Code
    - Open a new VS Code window
    - Open the folder where the project was cloned
+8. Set .env-local variables:
+   - Create a `.env-override` folder inside the project root
+   - Create a `.env.local` file inside the `.env-override` folder
+   - Add the following variables to the `.env.local` file:
+     ```
+     VITE_ENV=local
+     VITE_API_URL=http://localhost:3001	
+     VITE_USE_MOCK=true
+     ```
+    Is important to set `VITE_USE_MOCK=true` to use the mock API
 8. Start the application:
    - Open a new terminal
-   - `npm start`
+   - `npm run dev`
 9. Start debugging in VS Code:
    - Press `F5` or click on `Run and Debug` > `Green Debug Icon`
    - You can set breakpoints and inspect components in the [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
