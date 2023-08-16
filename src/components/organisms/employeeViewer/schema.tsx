@@ -55,7 +55,12 @@ export const schema = Yup.object().shape({
   lastName: Yup.string().required('Last name is required'),
   locationCity: Yup.string().required('Location city is required'),
   middleName: Yup.string().required('Middle name is required'),
-  positionTitle: Yup.string().required('Position title is required'),
+  positionTitle: Yup.string().required('Position title is required')
+    .test('positionTitle', 'Position title must contain at least tree letter', (value) => {
+      const positionTitleRegExp = /^(?=.*[A-Za-z].*[A-Za-z].*[A-Za-z])[A-Za-z\d\s]+$/;
+
+      return positionTitleRegExp.test(value as unknown as string);
+    }),
   salary: Yup.number()
     .nullable()
     .required('Salary is required')
