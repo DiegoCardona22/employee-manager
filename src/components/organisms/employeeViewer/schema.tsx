@@ -1,6 +1,5 @@
 // @packages
 import * as Yup from 'yup';
-import { t } from 'i18next';
 
 const addressRegExp = /^(?=.*[A-Za-z].*[A-Za-z])(?=.*\d.*\d)[A-Za-z\d\s]+$/;
 const phoneRegExp = /^(\+?\d{0,4})?\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{4}\)?)?$/;
@@ -27,8 +26,8 @@ export const schema = Yup.object().shape({
 
       return years >= 18;
     }),
-  email: Yup.string().email(t('text:invalidEmail') as string).required(t('text:required') as string),
-  firstName: Yup.string().required(t('text:required') as string),
+  email: Yup.string().email('Email is not valid').required('Email is required'),
+  firstName: Yup.string().required('First name is required'),
   hireDate: Yup.string()
     .required('Date of Birth is required')
     .test('hireDate', 'Hire date must be greater than date of birth', function (value) {
@@ -53,25 +52,29 @@ export const schema = Yup.object().shape({
       return years >= 18;
     })
     .nullable(),
-  lastName: Yup.string().required(t('text:required') as string),
-  locationCity: Yup.string().required(t('text:required') as string),
-  middleName: Yup.string().required(t('text:required') as string),
-  positionTitle: Yup.string().required(t('text:required') as string),
+  lastName: Yup.string().required('Last name is required'),
+  locationCity: Yup.string().required('Location city is required'),
+  middleName: Yup.string().required('Middle name is required'),
+  positionTitle: Yup.string().required('Position title is required'),
   salary: Yup.number()
     .nullable()
-    .required(t('text:required') as string)
+    .required('Salary is required')
     .positive()
     .integer()
-    .typeError(t('text:required') as string),
+    .typeError('Salary is required'),
   telephone: Yup.number()
     .nullable()
-    .test('phone', t('text:invalidPhone') as string, (value) => phoneRegExp.test(value as unknown as string))
-    .required(t('text:required') as string)
+    .test(
+      'phone',
+      'Phone number is not valid',
+      (value) => phoneRegExp.test(value as unknown as string),
+    )
+    .required('Phone number is required')
     .positive()
     .integer()
-    .typeError(t('text:required') as string),
+    .typeError('Phone number is not valid'),
   timeInPosition: Yup.string()
-    .required(t('text:required') as string)
+    .required('Time in position is required')
     .matches(
       timeInPositionRegExp,
       'Time in position must contain at least tree letter',

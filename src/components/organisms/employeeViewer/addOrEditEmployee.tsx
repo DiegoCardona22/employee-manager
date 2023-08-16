@@ -36,7 +36,7 @@ const AddOrEditEmployee = ({
               error={!!errors?.firstName}
               fullWidth
               helperText={errors?.firstName?.message}
-              inputProps={{ maxLength: 20 }}
+              inputProps={{ maxLength: 15 }}
               label="First Name"
               required
               {...register('firstName')}
@@ -49,7 +49,7 @@ const AddOrEditEmployee = ({
               fullWidth
               error={!!errors?.middleName}
               helperText={errors?.middleName?.message}
-              inputProps={{ maxLength: 20 }}
+              inputProps={{ maxLength: 15 }}
               {...register('middleName')}
             />
           </Grid>
@@ -58,7 +58,7 @@ const AddOrEditEmployee = ({
               error={!!errors?.lastName}
               fullWidth
               helperText={errors?.lastName?.message}
-              inputProps={{ maxLength: 20 }}
+              inputProps={{ maxLength: 15 }}
               label="Last Name"
               required
               {...register('lastName')}
@@ -66,22 +66,24 @@ const AddOrEditEmployee = ({
           </Grid>
           <Grid item xs={12} sm={12}>
             <TextField
+              error={!!errors?.locationCity}
+              fullWidth
+              helperText={errors?.locationCity?.message}
+              inputProps={{ maxLength: 20 }}
               label="Location City"
               required
-              fullWidth
-              error={!!errors?.locationCity}
-              helperText={errors?.locationCity?.message}
               {...register('locationCity')}
             />
           </Grid>
           <Grid item xs={12} sm={12}>
             <TextField
+              error={!!errors?.address}
+              fullWidth
+              helperText={errors?.address?.message}
+              inputProps={{ maxLength: 25 }}
               label="Address"
               required
               type="text"
-              fullWidth
-              error={!!errors?.address}
-              helperText={errors?.address?.message}
               {...register('address')}
             />
           </Grid>
@@ -108,6 +110,7 @@ const AddOrEditEmployee = ({
               required
               fullWidth
               type="number"
+              inputProps={{ maxLength: 10 }}
               error={!!errors?.telephone}
               helperText={errors?.telephone?.message}
               {...register('telephone')}
@@ -124,12 +127,13 @@ const AddOrEditEmployee = ({
         <Grid container spacing={2}>
           <Grid item xs={12} sm={12}>
             <TextField
+              error={!!errors?.positionTitle}
+              fullWidth
+              helperText={errors?.positionTitle?.message}
+              inputProps={{ maxLength: 15 }}
               label="Position Title"
               required
               type="text"
-              fullWidth
-              error={!!errors?.positionTitle}
-              helperText={errors?.positionTitle?.message}
               {...register('positionTitle')}
             />
           </Grid>
@@ -152,34 +156,37 @@ const AddOrEditEmployee = ({
           </Grid>
           <Grid item xs={12} sm={12}>
             <TextField
+              error={!!errors?.email}
+              fullWidth
+              helperText={errors?.email?.message}
+              inputProps={{ maxLength: 25 }}
               label="Email"
               required
               type="email"
-              fullWidth
-              error={!!errors?.email}
-              helperText={errors?.email?.message}
               {...register('email')}
             />
           </Grid>
           <Grid item xs={12} sm={12}>
             <TextField
+              error={!!errors?.salary}
+              fullWidth
+              helperText={errors?.salary?.message}
+              inputProps={{ maxLength: 15 }}
               label="Salary"
               required
-              fullWidth
               type="number"
-              error={!!errors?.salary}
-              helperText={errors?.salary?.message}
               {...register('salary')}
             />
           </Grid>
           <Grid item xs={12} sm={12}>
             <TextField
+              error={!!errors?.timeInPosition}
+              fullWidth
+              helperText={errors?.timeInPosition?.message}
+              inputProps={{ maxLength: 15 }}
               label="Time in Position"
               required
-              fullWidth
               type="text"
-              error={!!errors?.timeInPosition}
-              helperText={errors?.timeInPosition?.message}
               {...register('timeInPosition')}
             />
           </Grid>
