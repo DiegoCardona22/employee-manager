@@ -11,7 +11,16 @@ import { useEffect, useState } from 'react';
 import { v4 as uuidV4 } from 'uuid';
 import { yupResolver } from '@hookform/resolvers/yup';
 import {
-  Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, IconButton, Box, Tooltip,
+  Box,
+  IconButton,
+  Paper,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Tooltip,
 } from '@mui/material';
 
 // @scripts
@@ -98,7 +107,10 @@ const EmployeeViewer: React.FC = ({ dataTestId = 'employee-viewer' }: EmployeeVi
       dateArrival: new Date().toISOString().split('T')[0],
     };
 
-    setEmployeeList([...employeeList, newData]);
+    setEmployeeList([
+      ...employeeList,
+      newData,
+    ].sort((a: IEmployees, b: IEmployees) => a.firstName.localeCompare(b.firstName)));
     setAddOrEditEmployee({ isEditing: false, open: false, type: '' });
   };
 
@@ -115,14 +127,14 @@ const EmployeeViewer: React.FC = ({ dataTestId = 'employee-viewer' }: EmployeeVi
       return employee;
     });
 
-    setEmployeeList(newEmployeeList);
+    setEmployeeList(newEmployeeList.sort((a: IEmployees, b: IEmployees) => a.firstName.localeCompare(b.firstName)));
     setAddOrEditEmployee({ isEditing: false, open: false, type: '' });
   };
 
   const getEmployees = async () => {
     const employeesData = await EmployeesService.getEmployees();
 
-    setEmployeeList(employeesData);
+    setEmployeeList(employeesData.sort((a: IEmployees, b: IEmployees) => a.firstName.localeCompare(b.firstName)));
   };
 
   const getEmployeeDetails = async () => {
@@ -263,7 +275,10 @@ const EmployeeViewer: React.FC = ({ dataTestId = 'employee-viewer' }: EmployeeVi
           title={`Delete ${employeeSelected.firstName} ${employeeSelected.lastName}`}
           onCancel={() => setShowDeleteModal(false)}
           onConfirm={() => {
-            setEmployeeList(employeeList.filter((employee) => employee.id !== employeeSelected.id));
+            setEmployeeList(
+              employeeList.filter((employee) => employee.id !== employeeSelected.id)
+                .sort((a: IEmployees, b: IEmployees) => a.firstName.localeCompare(b.firstName)),
+            );
             setShowDeleteModal(false);
           }}
           type="delete"
