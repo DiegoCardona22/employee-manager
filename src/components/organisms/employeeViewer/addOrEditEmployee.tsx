@@ -171,7 +171,14 @@ const AddOrEditEmployee = ({
               error={!!errors?.salary}
               fullWidth
               helperText={errors?.salary?.message}
-              inputProps={{ maxLength: 15 }}
+              inputProps={{
+                maxLength: 15,
+              }}
+              // eslint-disable-next-line react/jsx-no-duplicate-props
+              InputProps={{
+                inputMode: 'numeric',
+                endAdornment: 'USD',
+              }}
               label="Salary"
               required
               type="number"

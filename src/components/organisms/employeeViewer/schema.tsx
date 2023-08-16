@@ -60,7 +60,7 @@ export const schema = Yup.object().shape({
     .nullable()
     .required('Salary is required')
     .positive()
-    .integer()
+    .integer("Salary can't be a decimal number")
     .typeError('Salary is required'),
   telephone: Yup.number()
     .nullable()
