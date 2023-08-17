@@ -1,4 +1,4 @@
-# Employee Manager App - React MUI TS Template
+# Employee Manager App
 This project is intended to be used as a template for creating new React applications with Material UI, TypeScript, SASS and more. It also includes a simple Employee Manager App to show how to use the template.
 
 The project was bootstrapped with [Create Vite](https://vitejs.dev/guide) following this [Tutorial](https://dev.to/equimancho/vite-configuracion-para-react-3hf2). Below you will find some information about main features and how to perform common tasks.
